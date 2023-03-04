@@ -27,7 +27,7 @@ $('.nav li a').bind('click', function(e){
 $(document).ready(function(){
 	
 	var obj = document.createElement("audio");
-	obj.src = "../HTML/audio/audio.mp3";
+	obj.src = "../HTML/audio/zara-zara.m4a";
 	obj.volume = 1;
 	obj.autoPlay = true;
 	obj.preLoad = true;       
@@ -36,15 +36,17 @@ $(document).ready(function(){
 		var $playNowButton = $(this);																/* button variable */
 		var $playlist = $playNowButton.parent().parent();						/* play list section class */
 		var $disk			= $playlist.children().children('.disk');			/* disk image */
-		
+		var playPause  =  $('#play-pause');
 		if ($disk.hasClass('rotating')) {
 			$disk.removeClass('rotating');
 			$playNowButton.children('i').removeClass('fa-pause').addClass('fa-play');
+			playPause.html("Play Now");
 			obj.pause();
 		} else {
 			$disk.addClass('rotating');
 			$playNowButton.children('i').removeClass('fa-play').addClass('fa-pause');
 			obj.play();
+			playPause.html("Pause");
 		}
 		e.preventDefault();
 	});
