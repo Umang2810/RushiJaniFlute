@@ -583,7 +583,7 @@ hr{
 }
 
 .work-with-us .why-content .why-item {
-	max-width: 450px;
+	/* max-width: 450px; */
 	margin: 0 auto;
 	margin-top: 30px;
 	padding: 20px 25px; 
